@@ -69,12 +69,6 @@ const Navbar = () => {
 						</>
 					) : (
 						<>
-							<a
-								href="#usage"
-								className="text-blue-900 hover:text-blue-600 font-medium transition duration-300 cursor-pointer"
-							>
-								Terms of Usage
-							</a>
 							<Link
 								to={"/login"}
 								className="px-4 py-1 border border-blue-600 text-blue-900 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
@@ -111,9 +105,6 @@ const Navbar = () => {
 				>
 					{isLoggedIn ? (
 						<>
-							<p className="text-blue-900 font-medium mb-3">
-								Hello, {username}
-							</p>
 							<button
 								onClick={() => setIsModalOpen(true)}
 								className="flex items-center justify-center w-8 h-8 bg-red-50 text-red-600 rounded-full hover:bg-red-600 hover:text-white transition duration-300"
@@ -123,27 +114,27 @@ const Navbar = () => {
 							<Link
 								to="/home/upload"
 								className="block mt-4 text-blue-900 hover:text-blue-600 font-medium transition duration-300"
+								onClick={() => setIsMenuOpen(false)} // Close menu on click
 							>
 								Upload
 							</Link>
 							<Link
-								to="/home/submission"
+								to="/home"
 								className="block mt-2 text-blue-900 hover:text-blue-600 font-medium transition duration-300"
+								onClick={() => setIsMenuOpen(false)} // Close menu on click
 							>
-								Manage Submissions
+								Submissions
 							</Link>
 						</>
 					) : (
 						<>
-							<p className="text-blue-900 font-medium mb-3">Usage</p>
-							<button className="w-full px-4 py-2 bg-blue-50 text-blue-900 rounded-md hover:bg-blue-600 hover:text-white transition duration-300">
+							<button className="px-4 py-2 bg-blue-50 text-blue-900 rounded-md hover:bg-blue-600 hover:text-white transition duration-300">
 								Login
 							</button>
 						</>
 					)}
 				</motion.div>
 			)}
-
 			{IsModalOpen && (
 				<LogoutModal
 					noText="Cancel"
