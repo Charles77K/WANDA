@@ -1,4 +1,4 @@
-import MainLayout from "../Layout/MainLayout";
+import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import Landing from "../pages/Landing";
 import Login from "../pages/Login";
