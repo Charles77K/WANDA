@@ -129,6 +129,7 @@ const Navbar = () => {
 					) : (
 						<>
 							<Link
+								onClick={() => setIsMenuOpen(false)}
 								to="/login"
 								className="px-4 py-2 bg-blue-50 text-blue-900 rounded-md hover:bg-blue-600 hover:text-white transition duration-300"
 							>
